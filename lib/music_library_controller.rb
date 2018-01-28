@@ -54,9 +54,9 @@ class MusicLibraryController
     alphabetized.each do |song_instance|
       counter +=1
       puts "#{counter}. #{song_instance.artist.name} - #{song_instance.name} - #{song_instance.genre.name}"
-      @list_of_songs << "#{counter}. #{song_instance.artist.name} - #{song_instance.name} - #{song_instance.genre.name}"
+    #  @list_of_songs << "#{counter}. #{song_instance.artist.name} - #{song_instance.name} - #{song_instance.genre.name}"
     end
-    @list_of_songs
+  #  @list_of_songs
   end
 
   def list_artists
