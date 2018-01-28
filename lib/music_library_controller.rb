@@ -122,7 +122,7 @@ class MusicLibraryController
       artist_name = alphabetized[song_number.to_i-1].artist.name
       song_name = alphabetized[song_number.to_i-1].name
       sentence = "Playing #{song_name} by #{artist_name}"
-      sentence
+      puts sentence
 #
 #binding.pry
 # #Produces an error because the #list_songs puts output preceeds the method return value
