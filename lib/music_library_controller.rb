@@ -118,7 +118,11 @@ class MusicLibraryController
 
    if song_number.to_i.between?(1, Song.all.count)
       alphabetized = songs.all.sort_by {|obj| obj.name}
-      alphabetized
+
+      artist_name = alphabetized[song_number-1].split(" - ")[0]
+      song_name = alphabetized[song_number-1].split(" - ")[1]
+      sentence = "Playing #{song_name} by #{artist_name}"
+      
 #
 #binding.pry
 # #Produces an error because the #list_songs puts output preceeds the method return value
