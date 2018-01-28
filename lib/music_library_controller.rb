@@ -119,8 +119,8 @@ class MusicLibraryController
    if song_number.to_i.between?(1, Song.all.count)
       alphabetized = Song.all.sort_by {|obj| obj.name}
 
-      artist_name = alphabetized[song_number-1].split(" - ")[0]
-      song_name = alphabetized[song_number-1].split(" - ")[1]
+      artist_name = alphabetized[song_number.to_i-1].artist.name
+      song_name = alphabetized[song_number-1][song_number.to_i-1].name
       sentence = "Playing #{song_name} by #{artist_name}"
 
 #
