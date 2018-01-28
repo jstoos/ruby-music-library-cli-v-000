@@ -4,7 +4,7 @@ class MusicLibraryController
 
   extend Concerns::Findable
 
-  attr_accessor :path, :song, :artist, :genre, :list_of_songs
+  attr_accessor :path, :song, :artist, :genre
 
   def initialize(path = "./db/mp3s")
     @path = path
@@ -46,17 +46,13 @@ class MusicLibraryController
 
   def list_songs
     counter = 0
-    list_of_songs = []
-    @list_of_songs = list_of_songs
     alphabetized = []
     alphabetized = Song.all.sort_by {|obj| obj.name}
 
     alphabetized.each do |song_instance|
       counter +=1
       puts "#{counter}. #{song_instance.artist.name} - #{song_instance.name} - #{song_instance.genre.name}"
-    #  @list_of_songs << "#{counter}. #{song_instance.artist.name} - #{song_instance.name} - #{song_instance.genre.name}"
     end
-  #  @list_of_songs
   end
 
   def list_artists
