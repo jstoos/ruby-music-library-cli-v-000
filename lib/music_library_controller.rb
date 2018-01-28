@@ -118,24 +118,10 @@ class MusicLibraryController
 
    if song_number.to_i.between?(1, Song.all.count)
       alphabetized = Song.all.sort_by {|obj| obj.name}
-
       artist_name = alphabetized[song_number.to_i-1].artist.name
       song_name = alphabetized[song_number.to_i-1].name
       sentence = "Playing #{song_name} by #{artist_name}"
       puts sentence
-#
-#binding.pry
-# #Produces an error because the #list_songs puts output preceeds the method return value
-    # artist_name = list_songs[song_number-1].split(" - ")[0]
-    # song_name = list_songs[song_number-1].split(" - ")[1]
-    # sentence = "Playing #{song_name} by #{artist_name}"
-# #Produce the right values in pry but not overall
-      # artist_name = Song.all[song_number.to_i-1].artist.name
-      # song_name = Song.all[song_number.to_i-1].name
-      # "Playing #{song_name} by #{artist_name}"
-
     end
-
   end
-
 end
