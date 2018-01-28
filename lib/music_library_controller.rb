@@ -116,6 +116,8 @@ class MusicLibraryController
     song_number = gets.strip
 
    if song_number.to_i.between?(1, Song.all.count)
+
+     list_songs
 #
 #binding.pry
 # #Produces an error because the #list_songs puts output preceeds the method return value
